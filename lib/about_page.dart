@@ -3,20 +3,33 @@ import 'package:flutter/material.dart';
 
 import 'app.dart';
 import 'base_page.dart';
+import 'data.dart';
 
 const INTRODUCE =
     "I am Nam, mobile developer from Ha Noi, Viet Nam. I have rich experience in Android development, also I am good at Flutter.";
 
+const SKILLS = """
+Android (Both Java and Kotlin):
+- Have 3 years+ experience in Android development.
+- Familiar with MVC, MVP, MVVM, MVRX (AirBnb), Clean architecture,...
+- Familiar with Android Jetpack, RxJava, FCM, Firebase, Google map, Socket, MQTT, Dagger, Koin...
+
+Flutter:
+- Have 1 year+ experience in Flutter.
+- Faliliar with Bloc, ScopeModel, Provider,...
+
+Confident in Algorithm, OOP concepts, Design Pattern, SOLID principles,...
+Proficient in using git.
+""";
+
 const AVATAR_SIZE = 108.0;
 
-final infos = {
-  "Name": "Nam Do",
-  "Location": "Ha Noi, Viet Nam",
-  "Birthday": "24 February, 1995",
-  "Email": "thanhnamitit@gmail.com",
-};
-
 class AboutPage extends StatelessWidget {
+  final Function downloadCV;
+  final Function hireMe;
+
+  AboutPage(GlobalKey key, this.downloadCV, this.hireMe) : super(key: key);
+
   Widget _multiChildLayout({
     bool forTablet,
     List<Widget> children,
@@ -82,7 +95,8 @@ class AboutPage extends StatelessWidget {
                       width: avatarSize,
                       height: avatarSize,
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("image/avatar.jpg"),
+                        backgroundImage: AssetImage(Data.AVATAR),
+                        backgroundColor: Colors.white,
                       ),
                     ),
                     SizedBox(width: 36, height: 32),
@@ -109,7 +123,7 @@ class AboutPage extends StatelessWidget {
                           LayoutBuilder(
                             builder: (_, constrains) => Wrap(
                               direction: Axis.horizontal,
-                              children: infos.entries
+                              children: Data.ABOUT_PAGE_INFO.entries
                                   .toList()
                                   .map((pair) => SizedBox(
                                       width: isTabletSize
@@ -129,7 +143,7 @@ class AboutPage extends StatelessWidget {
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 24, vertical: 12),
-                                onPressed: () {},
+                                onPressed: downloadCV,
                                 color: SUB_COLOR,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32),
@@ -156,7 +170,7 @@ class AboutPage extends StatelessWidget {
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 24, vertical: 12),
-                                onPressed: () {},
+                                onPressed: hireMe,
                                 color: MAIN_COLOR,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32),

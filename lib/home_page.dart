@@ -1,3 +1,4 @@
+import 'package:cv/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,10 @@ class HomePage extends StatelessWidget {
   final Function hireMe;
 
   HomePage({
+    GlobalKey key,
     this.downloadCV,
     this.hireMe,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                          text: "I'm $NAME",
+                          text: "I'm ${Data.NAME}",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -51,7 +53,7 @@ class HomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Text(
-                  SENTENCE,
+                  Data.HOME_SENTENCE,
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.white,
@@ -63,7 +65,7 @@ class HomePage extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    "- $AUTHOR -",
+                    "- ${Data.HOME_AUTHOR} -",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       color: Colors.white,

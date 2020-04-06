@@ -1,25 +1,22 @@
+import 'package:cv/data.dart';
+import 'package:cv/widget/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'app.dart';
 
-const FACEBOOK_URL = "https://www.facebook.com/thanhnamitit";
-const INSTAGRAM_URL = "https://www.instagram.com/thanhnamitit/";
-const GITHUB_URL = "https://github.com/thanhnamitit";
-const LINKEDIN_URL = "https://www.linkedin.com/in/đỗ-nam-b51829167/";
-
 class Navigation extends StatelessWidget {
+  final Function onTap;
+
+  Navigation(this.onTap);
+
   Widget _buildNavigationOption(
     String title,
     IconData icon, {
     Function onTap,
   }) {
-    return InkWell(
-      highlightColor: Colors.transparent,
-      focusColor: Colors.transparent,
-      hoverColor: Colors.transparent,
-      splashColor: Colors.transparent,
+    return MenuButton(
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.only(top: 6, bottom: 6),
@@ -77,7 +74,8 @@ class Navigation extends StatelessWidget {
                 width: 64,
                 height: 64,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("image/avatar.jpg"),
+                  backgroundImage: AssetImage(Data.AVATAR),
+                  backgroundColor: Colors.white,
                 ),
               ),
               SizedBox(height: 24),
@@ -85,7 +83,7 @@ class Navigation extends StatelessWidget {
                 text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: "$NAME",
+                      text: "${Data.NAME}",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -113,30 +111,40 @@ class Navigation extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 48),
-              _buildNavigationOption("Home", Icons.home, onTap: () {}),
-              _buildNavigationOption("About", Icons.account_box, onTap: () {}),
-              _buildNavigationOption("Resume", Icons.book, onTap: () {}),
-              _buildNavigationOption("Work", Icons.work, onTap: () {}),
-              _buildNavigationOption("Contact", Icons.contacts, onTap: () {}),
+              _buildNavigationOption("Home", Icons.home, onTap: () {
+                this.onTap(0);
+              }),
+              _buildNavigationOption("About", Icons.account_box, onTap: () {
+                this.onTap(1);
+              }),
+              _buildNavigationOption("Resume", Icons.book, onTap: () {
+                this.onTap(2);
+              }),
+              _buildNavigationOption("Work", Icons.work, onTap: () {
+                this.onTap(3);
+              }),
+              _buildNavigationOption("Contact", Icons.contacts, onTap: () {
+                this.onTap(4);
+              }),
               SizedBox(height: 48),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   _buildLinkingButton(
                     FontAwesomeIcons.facebookF,
-                    FACEBOOK_URL,
+                    Data.FACEBOOK_URL,
                   ),
                   _buildLinkingButton(
                     FontAwesomeIcons.instagram,
-                    INSTAGRAM_URL,
+                    Data.INSTAGRAM_URL,
                   ),
                   _buildLinkingButton(
                     FontAwesomeIcons.githubAlt,
-                    GITHUB_URL,
+                    Data.GITHUB_URL,
                   ),
                   _buildLinkingButton(
                     FontAwesomeIcons.linkedinIn,
-                    LINKEDIN_URL,
+                    Data.LINKEDIN_URL,
                   ),
                 ],
               ),
@@ -144,7 +152,7 @@ class Navigation extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  EMAIL,
+                  Data.EMAIL,
                   style: TextStyle(
                     color: Colors.white.withOpacity(.5),
                     fontWeight: FontWeight.w100,

@@ -1,3 +1,4 @@
+import 'package:cv/data.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -26,7 +27,8 @@ class AppTabBar extends StatelessWidget {
               width: 32,
               height: 32,
               child: CircleAvatar(
-                backgroundImage: AssetImage("image/avatar.jpg"),
+                backgroundImage: AssetImage(Data.AVATAR),
+                backgroundColor: Colors.white,
               ),
             ),
             SizedBox(width: 16),
@@ -34,7 +36,7 @@ class AppTabBar extends StatelessWidget {
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
-                    text: "$NAME",
+                    text: "${Data.NAME}",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

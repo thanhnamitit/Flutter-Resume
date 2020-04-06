@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'about_page.dart';
 
 class MySkillPage extends StatefulWidget {
+  MySkillPage(GlobalKey key) : super(key: key);
+
   @override
   _MySkillPageState createState() => _MySkillPageState();
 }
@@ -66,9 +68,9 @@ class _MySkillPageState extends State<MySkillPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             PageTitle("My skills"),
-            SizedBox(height: 64),
+            SizedBox(height: 32),
             Text(
-              INTRODUCE,
+              SKILLS,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey,
