@@ -1,9 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
+    <base href="/">
+
     <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Nam - Mobile Developer">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Nam - Mobile Developer">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icons/Icon-192.png"/>
+
     <title>Nam - Mobile Developer</title>
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        body {
+            background-color: #5A72EA;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .loader {
+            border: 16px solid #5A72EA;
+            border-radius: 50%;
+            border: 15px solid;
+            border-top: 16px solid #5A72EA;
+            border-right: 16px solid #FFFFFF;
+            border-bottom: 16px solid #5A72EA;
+            border-left: 16px solid #FFFFFF;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+    </style>
+
 </head>
+
+<div class="loading">
+    <div class="loader"></div>
+</div>
 <body>
 <script src="main.dart.js" type="application/javascript"></script>
 </body>

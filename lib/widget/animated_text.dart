@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../app.dart';
 
 class AnimatedText extends StatefulWidget {
-  final Function onTap;
+  final VoidCallback? onTap;
   final int bounceDuration;
   final String text;
 
   AnimatedText({
-    this.onTap,
-    this.text,
+    required this.onTap,
+    required this.text,
     this.bounceDuration = 200,
   });
 
@@ -19,9 +19,9 @@ class AnimatedText extends StatefulWidget {
 
 class _AnimatedTextState extends State<AnimatedText>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
-  Animation<Color> _colorTween;
+  late Animation<Color?> _colorTween;
 
   @override
   void initState() {

@@ -109,14 +109,14 @@ class Skill {
   int percent;
 
   Skill({
-    @required this.name,
-    @required this.percent,
+    required this.name,
+    required this.percent,
   });
 }
 
 final skills = [
-  Skill(name: "Android", percent: 80),
-  Skill(name: "Java", percent: 75),
-  Skill(name: "Kotlin", percent: 75),
-  Skill(name: "Flutter", percent: 70),
+  Skill(name: "Flutter", percent: 85),
+  Skill(name: "Android", percent: 85),
+  Skill(name: "Java", percent: 80),
+  Skill(name: "Kotlin", percent: 80),
 ];

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BasePage extends StatelessWidget {
-  final Color color;
+  final Color? color;
   final Widget child;
 
   BasePage({
     this.color,
-    this.child,
+    required this.child,
   });
 
   @override

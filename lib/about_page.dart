@@ -6,7 +6,7 @@ import 'base_page.dart';
 import 'data.dart';
 
 const INTRODUCE =
-    "I am Nam, mobile developer from Ha Noi, Viet Nam. I have rich experience in Android development, also I am good at Flutter.";
+    "I am Nam, Mobile Developer from Ha Noi, Viet Nam. I have rich experience in Android development, also I am good at Flutter.";
 
 const SKILLS = """
 Android (Both Java and Kotlin):
@@ -25,14 +25,14 @@ Proficient in using git.
 const AVATAR_SIZE = 108.0;
 
 class AboutPage extends StatelessWidget {
-  final Function downloadCV;
-  final Function hireMe;
+  final VoidCallback? downloadCV;
+  final VoidCallback? hireMe;
 
   AboutPage(GlobalKey key, this.downloadCV, this.hireMe) : super(key: key);
 
   Widget _multiChildLayout({
-    bool forTablet,
-    List<Widget> children,
+    required bool forTablet,
+    required List<Widget> children,
   }) {
     Widget result;
     if (!forTablet) {

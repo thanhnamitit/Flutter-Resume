@@ -27,6 +27,5 @@ class Data {
   static const MESSAGE_API =
       "https://us-central1-workout-e1b53.cloudfunctions.net/api/message";
 
-  static const CV_URL =
-      "https://www.topcv.vn/download-cv?cv_id=ee5ba82f207c20f1cc1d4f562df05f25&t=1586189535";
+  static const CV_URL = "https://thanhnamitit.xyz/dothanhnam_cv.pdf";
 }

@@ -14,7 +14,7 @@ class Navigation extends StatelessWidget {
   Widget _buildNavigationOption(
     String title,
     IconData icon, {
-    Function onTap,
+    VoidCallback? onTap,
   }) {
     return MenuButton(
       onTap: onTap,
@@ -79,27 +79,27 @@ class Navigation extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24),
-              RichText(
-                text: TextSpan(
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: "${Data.NAME}",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
+              Row(
+                children: [
+                  Text(
+                    "${Data.NAME}",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
                     ),
-                    TextSpan(
-                      text: ' ●',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: SUB_COLOR,
-                      ),
+                  ),
+                  SizedBox(width: 4),
+                  Container(
+                    width: 8,
+                    height: 8,
+                    margin: EdgeInsets.only(top: 8),
+                    decoration: BoxDecoration(
+                      color: SUB_COLOR,
+                      shape: BoxShape.circle,
                     ),
-                  ],
-                ),
+                  )
+                ],
               ),
               SizedBox(height: 4),
               Text(

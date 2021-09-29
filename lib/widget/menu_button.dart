@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class MenuButton extends StatefulWidget {
   final Widget child;
-  final Function onTap;
+  final VoidCallback? onTap;
   final int bounceDuration;
 
-  MenuButton({@required this.child, this.onTap, this.bounceDuration = 200});
+  MenuButton({
+    required this.child,
+    this.onTap,
+    this.bounceDuration = 200,
+  });
 
   @override
   _MenuButtonState createState() => _MenuButtonState();
@@ -13,7 +17,7 @@ class MenuButton extends StatefulWidget {
 
 class _MenuButtonState extends State<MenuButton>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

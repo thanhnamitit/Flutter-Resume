@@ -141,8 +141,8 @@ class Company {
   String time;
 
   Company({
-    @required this.imagePath,
-    @required this.name,
-    @required this.time,
+    required this.imagePath,
+    required this.name,
+    required this.time,
   });
 }

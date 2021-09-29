@@ -6,11 +6,11 @@ import 'app.dart';
 import 'base_page.dart';
 
 class HomePage extends StatelessWidget {
-  final Function downloadCV;
-  final Function hireMe;
+  final VoidCallback? downloadCV;
+  final VoidCallback? hireMe;
 
   HomePage({
-    GlobalKey key,
+    GlobalKey? key,
     this.downloadCV,
     this.hireMe,
   }) : super(key: key);
@@ -28,27 +28,27 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Flexible(
-                  child: RichText(
-                    text: TextSpan(
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: "I'm ${Data.NAME}",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 54,
-                          ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "I'm ${Data.NAME}",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 54,
                         ),
-                        TextSpan(
-                          text: ' ●',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                            color: SUB_COLOR,
-                          ),
+                      ),
+                      SizedBox(width: 4),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: EdgeInsets.only(top: 16),
+                        decoration: BoxDecoration(
+                          color: SUB_COLOR,
+                          shape: BoxShape.circle,
                         ),
-                      ],
-                    ),
+                      )
+                    ],
                   ),
                 ),
                 SizedBox(height: 16),

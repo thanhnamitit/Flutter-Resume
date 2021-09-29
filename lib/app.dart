@@ -114,10 +114,10 @@ class _MainPageState extends State<MainPage> {
 
   void scrollToIndex(int index) {
     Scrollable.ensureVisible(
-      keys[index].currentContext,
+      keys[index].currentContext!,
       duration: Duration(milliseconds: 500),
     );
-    if (_scaffoldKey.currentState.isDrawerOpen) {
+    if (_scaffoldKey.currentState!.isDrawerOpen) {
       Navigator.of(context).pop();
     }
   }

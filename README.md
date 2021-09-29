@@ -3,7 +3,7 @@ Resume Web page in Flutter
 
 
 ## Demo
-[Link](http://thanhnamitit.surge.sh/#/) 
+[Link](https://thanhnamitit.xyz/#/)
 
 ## Backend
 [message_server.js](https://github.com/thanhnamitit/Flutter-Resume/blob/master/message_server.js) 

@@ -4,7 +4,6 @@ import 'package:cv/data.dart';
 import 'package:cv/page_title.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class GetInTouchPage extends StatefulWidget {
   GetInTouchPage(GlobalKey key) : super(key: key);
@@ -63,7 +62,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
       style: TextStyle(fontSize: 14),
       cursorColor: SUB_COLOR,
       validator: (value) {
-        if (value.trim().isEmpty) {
+        if (value!.trim().isEmpty) {
           return 'The field is required';
         } else if (isEmail &&
             !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -126,52 +125,52 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
   }
 
   void submit() async {
-    if (_formKey.currentState.validate() && !isSubmitting) {
-      final name = nameController.text.trim();
-      final email = emailController.text.trim();
-      final subject = subjectController.text.trim();
-      final message = messageController.text.trim();
-      final targetMail = Data.EMAIL;
-      try {
-        toggleIsSubmitting(true);
-        var response = await http.post(Data.MESSAGE_API, body: {
-          "name": name,
-          "email": email,
-          "subject": subject,
-          "target_mail": targetMail,
-          "message": message,
-        });
-        final statusCode = response.statusCode;
-        if (statusCode == 200) {
-          Scaffold.of(context).showSnackBar(
-            SnackBar(
-              content: Text("Thank for your message ^^~"),
-              backgroundColor: Colors.green,
-            ),
-          );
-          nameController.clear();
-          emailController.clear();
-          subjectController.clear();
-          messageController.clear();
-        } else {
-          Scaffold.of(context).showSnackBar(
-            SnackBar(
-              content: Text("Something went wrong :("),
-              backgroundColor: Colors.red,
-            ),
-          );
-        }
-        toggleIsSubmitting(false);
-      } on Exception catch (e) {
-        Scaffold.of(context).showSnackBar(
-          SnackBar(
-            content: Text("Something went wrong :("),
-            backgroundColor: Colors.red,
-          ),
-        );
-        toggleIsSubmitting(false);
-      }
-    }
+    // if (_formKey.currentState.validate() && !isSubmitting) {
+    //   final name = nameController.text.trim();
+    //   final email = emailController.text.trim();
+    //   final subject = subjectController.text.trim();
+    //   final message = messageController.text.trim();
+    //   final targetMail = Data.EMAIL;
+    //   try {
+    //     toggleIsSubmitting(true);
+    //     var response = await http.post(Data.MESSAGE_API, body: {
+    //       "name": name,
+    //       "email": email,
+    //       "subject": subject,
+    //       "target_mail": targetMail,
+    //       "message": message,
+    //     });
+    //     final statusCode = response.statusCode;
+    //     if (statusCode == 200) {
+    //       Scaffold.of(context).showSnackBar(
+    //         SnackBar(
+    //           content: Text("Thank for your message ^^~"),
+    //           backgroundColor: Colors.green,
+    //         ),
+    //       );
+    //       nameController.clear();
+    //       emailController.clear();
+    //       subjectController.clear();
+    //       messageController.clear();
+    //     } else {
+    //       Scaffold.of(context).showSnackBar(
+    //         SnackBar(
+    //           content: Text("Something went wrong :("),
+    //           backgroundColor: Colors.red,
+    //         ),
+    //       );
+    //     }
+    //     toggleIsSubmitting(false);
+    //   } on Exception catch (e) {
+    //     Scaffold.of(context).showSnackBar(
+    //       SnackBar(
+    //         content: Text("Something went wrong :("),
+    //         backgroundColor: Colors.red,
+    //       ),
+    //     );
+    //     toggleIsSubmitting(false);
+    //   }
+    // }
   }
 
   Widget buildTabletLayout() {

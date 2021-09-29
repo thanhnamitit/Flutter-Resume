@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class ReactButton extends StatefulWidget {
   final Widget child;
-  final Function onTap;
+  final VoidCallback? onTap;
   final int bounceDuration;
 
-  ReactButton({@required this.child, this.onTap, this.bounceDuration = 200});
+  ReactButton({
+    required this.child,
+    this.onTap,
+    this.bounceDuration = 200,
+  });
 
   @override
   _ReactButtonState createState() => _ReactButtonState();
@@ -13,7 +17,7 @@ class ReactButton extends StatefulWidget {
 
 class _ReactButtonState extends State<ReactButton>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
