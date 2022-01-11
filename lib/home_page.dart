@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     MaterialButton(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          EdgeInsets.symmetric(horizontal: 48, vertical: 24),
                       onPressed: downloadCV,
                       color: SUB_COLOR,
                       shape: RoundedRectangleBorder(
@@ -106,7 +106,7 @@ class HomePage extends StatelessWidget {
                     ),
                     OutlineButton(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          EdgeInsets.symmetric(horizontal: 48, vertical: 24),
                       onPressed: hireMe,
                       color: Colors.white,
                       shape: OutlineInputBorder(

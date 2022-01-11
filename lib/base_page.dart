@@ -11,12 +11,12 @@ class BasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        color: color,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: child,
-      ),
+    return Card(
+      elevation: 4,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      color: color,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: child,
     );
   }
 }

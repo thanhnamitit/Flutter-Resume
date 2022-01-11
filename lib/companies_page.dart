@@ -23,8 +23,8 @@ final companies = [
     time: "4 months",
   ),
   Company(
-    imagePath: "image/vinid.png",
-    name: "VinID",
+    imagePath: "image/vingroup.png",
+    name: "Vingroup",
     time: "Current company",
   ),
 ];

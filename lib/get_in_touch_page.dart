@@ -111,7 +111,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
 
   Widget buildSubmitButton() {
     return MaterialButton(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      padding: EdgeInsets.symmetric(horizontal: 48, vertical: 24),
       onPressed: submit,
       color: isSubmitting ? Colors.grey : SUB_COLOR,
       shape: RoundedRectangleBorder(
@@ -125,52 +125,12 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
   }
 
   void submit() async {
-    // if (_formKey.currentState.validate() && !isSubmitting) {
-    //   final name = nameController.text.trim();
-    //   final email = emailController.text.trim();
-    //   final subject = subjectController.text.trim();
-    //   final message = messageController.text.trim();
-    //   final targetMail = Data.EMAIL;
-    //   try {
-    //     toggleIsSubmitting(true);
-    //     var response = await http.post(Data.MESSAGE_API, body: {
-    //       "name": name,
-    //       "email": email,
-    //       "subject": subject,
-    //       "target_mail": targetMail,
-    //       "message": message,
-    //     });
-    //     final statusCode = response.statusCode;
-    //     if (statusCode == 200) {
-    //       Scaffold.of(context).showSnackBar(
-    //         SnackBar(
-    //           content: Text("Thank for your message ^^~"),
-    //           backgroundColor: Colors.green,
-    //         ),
-    //       );
-    //       nameController.clear();
-    //       emailController.clear();
-    //       subjectController.clear();
-    //       messageController.clear();
-    //     } else {
-    //       Scaffold.of(context).showSnackBar(
-    //         SnackBar(
-    //           content: Text("Something went wrong :("),
-    //           backgroundColor: Colors.red,
-    //         ),
-    //       );
-    //     }
-    //     toggleIsSubmitting(false);
-    //   } on Exception catch (e) {
-    //     Scaffold.of(context).showSnackBar(
-    //       SnackBar(
-    //         content: Text("Something went wrong :("),
-    //         backgroundColor: Colors.red,
-    //       ),
-    //     );
-    //     toggleIsSubmitting(false);
-    //   }
-    // }
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("This feature was removed :D"),
+        backgroundColor: Colors.red,
+      ),
+    );
   }
 
   Widget buildTabletLayout() {
@@ -297,6 +257,13 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
                 },
               ),
               SizedBox(height: 32),
+              Text(
+                'Note: Submit function is not work anymore, but I keep it here because it\'s beautiful ^^',
+                style: Theme.of(context).textTheme.caption?.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: Colors.deepOrange,
+                    ),
+              )
             ],
           ),
         ),

@@ -10,13 +10,13 @@ const INTRODUCE =
 
 const SKILLS = """
 Android (Both Java and Kotlin):
-- Have 3 years+ experience in Android development.
+- Have 4 years+ experience in Android development.
 - Familiar with MVC, MVP, MVVM, MVRX (AirBnb), Clean architecture,...
 - Familiar with Android Jetpack, RxJava, FCM, Firebase, Google map, Socket, MQTT, Dagger, Koin...
 
 Flutter:
-- Have 1 year+ experience in Flutter.
-- Faliliar with Bloc, ScopeModel, Provider,...
+- Have 3 year+ experience in Flutter.
+- Familiar with Bloc, ScopeModel, Provider,...
 
 Confident in Algorithm, OOP concepts, Design Pattern, SOLID principles,...
 Proficient in using git.
@@ -142,7 +142,9 @@ class AboutPage extends StatelessWidget {
                             children: <Widget>[
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 24, vertical: 12),
+                                  horizontal: 42,
+                                  vertical: 20,
+                                ),
                                 onPressed: downloadCV,
                                 color: SUB_COLOR,
                                 shape: RoundedRectangleBorder(
@@ -169,7 +171,9 @@ class AboutPage extends StatelessWidget {
                               ),
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 24, vertical: 12),
+                                  horizontal: 42,
+                                  vertical: 20,
+                                ),
                                 onPressed: hireMe,
                                 color: MAIN_COLOR,
                                 shape: RoundedRectangleBorder(

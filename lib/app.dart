@@ -1,3 +1,4 @@
+import 'package:cv/base_page.dart';
 import 'package:cv/data.dart';
 import 'package:cv/get_in_touch_page.dart';
 import 'package:cv/home_page.dart';
@@ -14,7 +15,7 @@ import 'about_page.dart';
 import 'companies_page.dart';
 import 'my_skill_page.dart';
 
-const TOP_PADDING_SIZE = 32.0;
+const VERTICAL_PADDING_SIZE = 32.0;
 const PAGE_PADDING_SIZE = 18.0;
 
 const MAIN_COLOR = Color(0xff5A72EA);
@@ -61,7 +62,10 @@ class _MainPageState extends State<MainPage> {
     scrollToIndex(keys.length - 1);
   }
 
-  Widget pagePadding() => const SizedBox(height: PAGE_PADDING_SIZE);
+  Widget pagePadding([Key? key]) => SizedBox(
+        key: key,
+        height: PAGE_PADDING_SIZE,
+      );
 
   Widget _homePage() {
     return IntrinsicHeight(
@@ -93,12 +97,20 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildListDetail(bool forTablet) {
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: TOP_PADDING_SIZE),
+      padding: EdgeInsets.only(bottom: VERTICAL_PADDING_SIZE),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          SizedBox(height: VERTICAL_PADDING_SIZE),
           Visibility(visible: !forTablet, child: AppTabBar()),
           _homePage(),
+          pagePadding(),
+          BasePage(
+            child: InkWell(
+              onTap: () => launch(Data.CERTIFICATE_URL),
+              child: Image.asset('image/cer.png'),
+            ),
+          ),
           pagePadding(),
           AboutPage(keys[1], _downloadCV, _hireMe),
           pagePadding(),
@@ -124,7 +136,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildNavigation(bool forTablet) {
     return Padding(
-      padding: EdgeInsets.only(top: forTablet ? TOP_PADDING_SIZE : 0),
+      padding: EdgeInsets.only(top: forTablet ? VERTICAL_PADDING_SIZE : 0),
       child: Navigation((index) {
         scrollToIndex(index);
       }),
