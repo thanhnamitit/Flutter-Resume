@@ -4,7 +4,7 @@ Resume Web page in Flutter
 
 ## Demo
 
-[thanhnamitit.xyz](https://thanhnamitit.xyz/#/)
+[thanhnamitit.com](https://thanhnamitit.com/#/)
 
 ## Backend
 
