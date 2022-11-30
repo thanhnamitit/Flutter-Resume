@@ -104,18 +104,21 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    OutlineButton(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 48, vertical: 24),
+                    MaterialButton(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 48,
+                        vertical: 24,
+                      ),
+                      elevation: 0,
                       onPressed: hireMe,
-                      color: Colors.white,
+                      color: MAIN_COLOR,
                       shape: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32),
-                      ),
-                      borderSide: BorderSide(
+                        borderSide: BorderSide(
+                          width: 1,
                           color: Colors.white,
-                          style: BorderStyle.solid,
-                          width: 1),
+                        ),
+                      ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
